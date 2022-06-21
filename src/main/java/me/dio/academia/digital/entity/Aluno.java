@@ -39,7 +39,7 @@ public class Aluno {
 
   private String bairro;
 
-  private LocalDate dataDeNascimento;
+  private String dataDeNascimento;
 
   @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
   @JsonIgnore

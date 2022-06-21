@@ -3,6 +3,7 @@ package me.dio.academia.digital.service;
 import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaForm;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaUpdateForm;
+import me.dio.academia.digital.exception.AvaliacaoNotFoundException;
 
 import java.util.List;
 
@@ -18,8 +19,9 @@ public interface IAvaliacaoFisicaService {
    * Retorna uma Avaliação Física que está no banco de dados de acordo com seu Id.
    * @param id - id da Avaliação Física que será exibida.
    * @return - Avaliação Física de acordo com o Id fornecido.
+ * @throws AvaliacaoNotFoundException
    */
-  AvaliacaoFisica get(Long id);
+  AvaliacaoFisica get(Long id) throws AvaliacaoNotFoundException;
 
   /**
    * Retorna todas as Avaliações Física que estão no banco de dados.
@@ -33,12 +35,8 @@ public interface IAvaliacaoFisicaService {
    * @param formUpdate - formulário referente aos dados necessários para atualização da Avaliação
    * Física no banco de dados.
    * @return - Avaliação Física recém-atualizada.
+ * @throws AvaliacaoNotFoundException
    */
-  AvaliacaoFisica update(Long id, AvaliacaoFisicaUpdateForm formUpdate);
+  AvaliacaoFisica update(Long id, AvaliacaoFisicaUpdateForm formUpdate) throws AvaliacaoNotFoundException;
 
-  /**
-   * Deleta uma Avaliação Física específica.
-   * @param id - id da Avaliação Física que será removida.
-   */
-  void delete(Long id);
 }
